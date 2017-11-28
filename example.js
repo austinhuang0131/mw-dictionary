@@ -6,7 +6,7 @@ var Dictionary = require('./dictionary'),
 	//pass the constructor a config object with your key
 	dict = new Dictionary({
 		key: process.argv[2],
-		type: process.argv[3]
+		type: process.argv[4]
 	});
 
 //sample method
