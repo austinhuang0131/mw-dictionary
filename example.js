@@ -1,11 +1,12 @@
 //To run:
-//      $ node example.js [your-merriam-webster-api-key] [word]
+//      $ node example.js [your-merriam-webster-api-key] [word] [type]
 
 var Dictionary = require('./dictionary'),
 	
 	//pass the constructor a config object with your key
 	dict = new Dictionary({
-		key: process.argv[2]
+		key: process.argv[2],
+		type: process.argv[3]
 	});
 
 //sample method
