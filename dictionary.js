@@ -1,8 +1,5 @@
 var DEBUG = false;
 
-//  Endpoints
-var MW_ROOT = 'http://www.dictionaryapi.com/api/v1/references/collegiate/xml/';
-
 //  Dependencies
 var request = require('request'),
     xml     = require('xml2js');
@@ -10,6 +7,7 @@ var request = require('request'),
 //  Dictionary constructor
 var Dictionary = function (config) {  
     this.key = config.key;
+    this.type = config.type;
 }
 
 //  Dictionary functions
@@ -91,7 +89,7 @@ Dictionary.prototype = {
 
     //constructs the search url
     getSearchUrl: function(word){
-        return MW_ROOT+word+'?key='+this.key;
+        return 'http://www.dictionaryapi.com/api/v1/references/'+this.type+'/xml/'+word+'?key='+this.key;
     }
 }
 
